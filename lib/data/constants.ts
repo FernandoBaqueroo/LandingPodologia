@@ -7,10 +7,10 @@ export interface NavItem {
 }
 
 export const NAV_ITEMS: NavItem[] = [
-  { label: "Inicio", href: "#hero" },
-  { label: "Sobre Mí", href: "#about" },
-  { label: "Servicios", href: "#services" },
-  { label: "Ubicación", href: "#contact" },
+  { label: "Inicio", href: "#inicio" },
+  { label: "Sobre Mí", href: "#sobre-mi" },
+  { label: "Servicios", href: "#servicios" },
+  { label: "Ubicación", href: "#ubicacion" },
 ];
 
 /* ─── Hero ─── */

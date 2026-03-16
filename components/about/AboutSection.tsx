@@ -38,7 +38,7 @@ const AboutSection = () => {
   );
 
   return (
-    <section ref={containerRef} id="about" className="py-20 lg:py-32 bg-surface">
+    <section ref={containerRef} id="sobre-mi" className="py-20 lg:py-32 bg-background overflow-hidden">
       <div className="max-w-screen-2xl w-full mx-auto px-6 lg:px-10">
         <h2 className="text-3xl lg:text-5xl font-semibold text-foreground text-center mb-12 lg:mb-20">
           {ABOUT.title}

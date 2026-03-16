@@ -26,21 +26,28 @@ const Header = () => {
       >
         <nav className="max-w-screen-2xl w-full mx-auto flex items-center justify-between px-6 py-5 lg:py-6 lg:px-10">
           {/* Logo + Brand */}
-          <a href="#hero" className="flex items-center gap-3">
+          <a
+            href="/"
+            onClick={(e) => {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: "smooth" });
+              window.history.pushState(null, "", "/inicio");
+            }}
+            className="flex items-center gap-3"
+          >
             <Image
               src="/photos/logo.svg"
               alt="Rubén Baquero Podología — Logo"
-              width={44}
-              height={44}
-              className="w-10 h-10 lg:w-15 lg:h-15"
+              width={48}
+              height={48}
+              className="w-10 h-10 lg:w-12 lg:h-12"
             />
             <div className="flex flex-col leading-tight">
               <span className="text-base lg:text-xl font-semibold text-foreground">
                 Rubén Baquero
               </span>
-              <span className="text-sm font-light text-muted hidden sm:block">
-                Biomecánica |{" "}
-                <span className="text-accent">Podología</span> | Ecografía
+              <span className="text-[10px] lg:text-sm font-light text-muted-foreground">
+                Biomecánica | <span className="text-accent">Podología</span> | Ecografía
               </span>
             </div>
           </a>
@@ -51,7 +58,16 @@ const Header = () => {
               <li key={item.href}>
                 <a
                   href={item.href}
-                  className="text-base font-normal text-foreground hover:text-accent transition-colors"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const targetId = item.href.replace("#", "");
+                    const element = document.getElementById(targetId);
+                    if (element) {
+                      element.scrollIntoView({ behavior: "smooth" });
+                      window.history.pushState(null, "", `/${targetId}`);
+                    }
+                  }}
+                  className="text-base font-medium text-foreground hover:text-accent transition-colors"
                 >
                   {item.label}
                 </a>

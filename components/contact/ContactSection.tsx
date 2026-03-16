@@ -54,7 +54,7 @@ const ContactSection = () => {
   );
 
   return (
-    <section ref={containerRef} id="contact" className="py-20 lg:py-32 bg-surface">
+    <section ref={containerRef} id="ubicacion" className="py-20 lg:py-32 bg-surface">
       <div className="max-w-screen-2xl w-full mx-auto px-6 lg:px-10">
         <h2 className="text-3xl lg:text-5xl font-semibold text-foreground text-center mb-5">
           {CONTACT.title}
@@ -76,10 +76,10 @@ const ContactSection = () => {
                   <Icon size={20} className="text-accent" />
                 </div>
                 <div className="flex flex-col sm:items-center gap-1">
-                  <span className="text-xs font-medium text-muted uppercase tracking-wider">
+                  <p className="text-muted font-medium uppercase tracking-wider wrap-break-word">
                     {item.label}
-                  </span>
-                  <span className="text-sm font-normal text-foreground leading-snug break-words">
+                  </p>
+                  <span className="text-sm font-normal text-foreground leading-snug wrap-break-word">
                     {item.value}
                   </span>
                 </div>

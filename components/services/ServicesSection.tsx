@@ -50,7 +50,7 @@ const ServicesSection = () => {
   return (
     <section
       ref={containerRef}
-      id="services"
+      id="servicios"
       className="py-20 lg:py-32 bg-background"
     >
       <div className="max-w-screen-2xl w-full mx-auto px-6 lg:px-10">
