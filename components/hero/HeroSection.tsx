@@ -57,7 +57,7 @@ const HeroSection = () => {
                   {HERO.ctaPrimary}
                 </Button>
               </a>
-              <a href="#about" data-hero-cta className="group w-full sm:w-auto">
+              <a href="#sobre-mi" data-hero-cta className="group w-full sm:w-auto">
                 <Button
                   variant="outline"
                   size="lg"

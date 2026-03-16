@@ -4,6 +4,8 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import GsapProvider from "@/components/providers/GsapProvider";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -41,6 +43,8 @@ const RootLayout = ({
           {children}
           <Footer />
           <WhatsAppButton />
+          <Analytics />
+          <SpeedInsights />
         </GsapProvider>
       </body>
     </html>

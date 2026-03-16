@@ -64,7 +64,7 @@ export const POST = async (request: Request) => {
     if (error) {
       console.error("❌ Error de Resend:", error);
       return NextResponse.json(
-        { error: "Error al enviar el email." },
+        { error: `Error de Resend: ${error.message || "Error desconocido"}`, detail: error },
         { status: 500 }
       );
     }

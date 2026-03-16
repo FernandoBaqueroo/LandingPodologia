@@ -75,7 +75,7 @@ const AboutSection = () => {
             <ExpandableQuote text={ABOUT.bio} author="Rubén Baquero, Podólogo" />
           </div>
           <div className="mt-8 lg:mt-10 flex justify-center">
-            <a href="#contact" className="group">
+            <a href="#ubicacion" className="group">
               <Button size="lg" className="font-normal text-base">
                 Ven a conocernos
                 <ArrowRight

@@ -63,23 +63,23 @@ const ContactSection = () => {
           Estamos en Carabanchel, Madrid. Pide tu cita y te atenderemos encantados.
         </p>
 
-        {/* Contact info — stacked on mobile, row on tablet+ */}
+        {/* Contact info — symmetrical grid of cards */}
         <div
           data-contact-row
-          className="flex flex-col sm:flex-row sm:flex-wrap sm:justify-center gap-8 sm:gap-10 lg:gap-12 mb-12 lg:mb-16"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-8 mb-16 lg:mb-24"
         >
           {CONTACT_ITEMS.map((item) => {
             const Icon = item.icon;
             const content = (
-              <div className="flex flex-row sm:flex-col items-center sm:text-center gap-4 sm:gap-3 group">
-                <div className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-background border border-border shrink-0 group-hover:border-accent group-hover:shadow-surface transition-all duration-300">
-                  <Icon size={20} className="text-accent" />
+              <div className="flex flex-col items-center justify-center text-center gap-4 p-6 lg:p-8 h-full rounded-2xl bg-background border border-border hover:border-accent hover:shadow-soft transition-all duration-400 group">
+                <div className="flex items-center justify-center w-14 h-14 rounded-full bg-surface border border-border shrink-0 group-hover:bg-accent/5 group-hover:border-accent transition-all duration-300">
+                  <Icon size={24} className="text-accent" />
                 </div>
-                <div className="flex flex-col sm:items-center gap-1">
-                  <p className="text-muted font-medium uppercase tracking-wider wrap-break-word">
+                <div className="flex flex-col items-center gap-2 w-full min-w-0 overflow-hidden">
+                  <p className="text-[10px] lg:text-xs text-muted font-semibold uppercase tracking-[0.2em] truncate w-full">
                     {item.label}
                   </p>
-                  <span className="text-sm font-normal text-foreground leading-snug wrap-break-word">
+                  <span className="block text-sm lg:text-base font-normal text-foreground leading-relaxed break-all [word-break:break-word] w-full text-center max-w-full">
                     {item.value}
                   </span>
                 </div>
@@ -93,7 +93,7 @@ const ContactSection = () => {
                   key={item.label}
                   href={item.href}
                   data-contact-item
-                  className="block"
+                  className="block h-full"
                   {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                 >
                   {content}
@@ -101,7 +101,7 @@ const ContactSection = () => {
               );
             }
             return (
-              <div key={item.label} data-contact-item>
+              <div key={item.label} data-contact-item className="h-full">
                 {content}
               </div>
             );

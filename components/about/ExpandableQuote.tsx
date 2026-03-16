@@ -19,7 +19,7 @@ const ExpandableQuote = ({ text, author }: ExpandableQuoteProps) => {
           expanded ? "" : "line-clamp-4 lg:line-clamp-none"
         }`}
       >
-        <p className="text-base lg:text-xl font-light text-foreground leading-relaxed italic">
+        <p className="text-base lg:text-xl font-light text-foreground leading-relaxed italic whitespace-pre-line text-justify">
           {text}
         </p>
         <p className="mt-4 lg:mt-6 text-base font-medium text-accent">

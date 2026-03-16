@@ -91,7 +91,7 @@ const Footer = () => {
                       alt="Doctoralia"
                       width={20}
                       height={20}
-                      className="shrink-0 brightness-0 invert"
+                      className="shrink-0 brightness-0 invert w-5 h-5"
                     />
                   ) : (
                     <Linkedin size={18} className="shrink-0" />
