@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// El cliente se instancia dentro de la función para evitar errores durante el build
+// si la variable de entorno no está configurada todavía.
 
 interface ContactBody {
   name: string;
@@ -13,6 +14,7 @@ interface ContactBody {
 export const POST = async (request: Request) => {
   try {
     const body = (await request.json()) as ContactBody;
+    const resend = new Resend(process.env.RESEND_API_KEY);
 
     if (!body.name || !body.email || !body.message) {
       return NextResponse.json(
@@ -22,8 +24,8 @@ export const POST = async (request: Request) => {
     }
 
     const { error } = await resend.emails.send({
-      from: `Formulario Web <${process.env.RESEND_FROM_EMAIL ?? "onboarding@resend.dev"}>`,
-      to: [process.env.CONTACT_EMAIL ?? "clinica@rubenbaquero.es"],
+      from: `Formulario Web <onboarding@resend.dev>`,
+      to: ["podologocarabanchel@gmail.com"],
       replyTo: body.email,
       subject: `Nuevo mensaje de contacto — ${body.name}`,
       html: `
