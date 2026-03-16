@@ -24,7 +24,7 @@ export const POST = async (request: Request) => {
     }
 
     const { error } = await resend.emails.send({
-      from: `Formulario Web <onboarding@resend.dev>`,
+      from: `Formulario Web <notificaciones@podologiarrubenbaquero.com>`,
       to: ["podologocarabanchel@gmail.com"],
       replyTo: body.email,
       subject: `Nuevo mensaje de contacto — ${body.name}`,
@@ -55,7 +55,7 @@ export const POST = async (request: Request) => {
           </table>
           <hr style="border: none; border-top: 1px solid #ddd; margin: 24px 0;" />
           <p style="font-size: 12px; color: #999; text-align: center;">
-            Enviado desde el formulario de contacto — rubenbaquero.es
+            Enviado desde el formulario de contacto — podologiarrubenbaquero.com
           </p>
         </div>
       `,

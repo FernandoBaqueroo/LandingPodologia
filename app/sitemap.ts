@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 const sitemap = (): MetadataRoute.Sitemap => [
   {
-    url: "https://podologiarubenbaquero.com",
+    url: "https://podologiarrubenbaquero.com",
     lastModified: new Date(),
     changeFrequency: "monthly",
     priority: 1,

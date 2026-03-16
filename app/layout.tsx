@@ -15,7 +15,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://podologiarubenbaquero.com"),
+  metadataBase: new URL("https://podologiarrubenbaquero.com"),
   title: "Podólogo en Carabanchel | Rubén Baquero",
   description:
     "Clínica de podología en Carabanchel, Madrid. Especialistas en biomecánica, ecografía del pie, plantillas a medida y cirugía podológica. Más de 9 años de experiencia.",
