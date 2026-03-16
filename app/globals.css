@@ -1,0 +1,166 @@
+@import "tailwindcss";
+@import "@heroui/styles";
+
+/*
+ * Paleta de colores – Podología Rubén Baquero
+ * Inspirada en: podologiarubenbaquero.com
+ *
+ * Primario (Bronce/Dorado): #8b785d
+ * Primario hover:            #635542
+ * Fondo principal:           #f8fafc
+ * Superficie/Cards:          #ffffff
+ * Texto principal:           #1e293b
+ * Texto secundario:          #4b5563
+ * Bordes/Divisores:          #e2e8f0
+ */
+
+/* ━━━ Fuente base ━━━ */
+:root {
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ━━━ Sistema de escalado responsive por font-size (rem-based) ━━━ */
+
+:root,
+html {
+  font-size: 16px;
+  /* Base for mobile */
+}
+
+@media (min-width: 640px) {
+
+  /* sm */
+  :root,
+  html {
+    font-size: 17px;
+  }
+}
+
+@media (min-width: 768px) {
+
+  /* md */
+  :root,
+  html {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  /* lg */
+  :root,
+  html {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 1280px) {
+
+  /* xl */
+  :root,
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 2000px) {
+
+  /* 2xl+ */
+  :root,
+  html {
+    font-size: 18px;
+  }
+}
+
+/* ━━━ Tema claro ━━━ */
+
+:root,
+[data-theme="light"] {
+  /* — Brand — */
+  --accent: oklch(0.56 0.06 60);
+  --accent-foreground: oklch(1 0 0);
+
+  /* — Backgrounds — */
+  --background: #f3f3f3;
+  --foreground: oklch(0.21 0.02 260);
+
+  /* — Surface (Cards, modals) — */
+  --surface: oklch(1 0 0);
+  --surface-foreground: oklch(0.21 0.02 260);
+
+  /* — Overlay — */
+  --overlay: oklch(1 0 0);
+  --overlay-foreground: oklch(0.21 0.02 260);
+
+  /* — Muted (textos secundarios) — */
+  --muted: oklch(0.45 0.015 260);
+
+  /* — Default (chips, badges) — */
+  --default: oklch(0.94 0.005 260);
+  --default-foreground: oklch(0.21 0.02 260);
+
+  /* — Status — */
+  --success: oklch(0.73 0.19 151);
+  --success-foreground: oklch(0.21 0 0);
+
+  --warning: oklch(0.78 0.16 72);
+  --warning-foreground: oklch(0.21 0 0);
+
+  --danger: oklch(0.65 0.23 26);
+  --danger-foreground: oklch(0.99 0 0);
+
+  /* — Misc — */
+  --border: oklch(0.90 0.005 260);
+  --separator: oklch(0.92 0.004 260);
+  --focus: var(--accent);
+  --link: var(--accent);
+
+  /* — Button radius override (less pill, more subtle) — */
+  --heroui-radius: 0.75rem;
+}
+
+/* ━━━ Tema oscuro ━━━ */
+
+.dark,
+[data-theme="dark"] {
+  /* — Brand — */
+  --accent: oklch(0.72 0.08 60);
+  --accent-foreground: oklch(0.15 0 0);
+
+  /* — Backgrounds — */
+  --background: oklch(0.16 0.01 260);
+  --foreground: oklch(0.95 0 0);
+
+  /* — Surface — */
+  --surface: oklch(0.22 0.008 260);
+  --surface-foreground: oklch(0.95 0 0);
+
+  /* — Overlay — */
+  --overlay: oklch(0.24 0.008 260);
+  --overlay-foreground: oklch(0.95 0 0);
+
+  /* — Muted — */
+  --muted: oklch(0.65 0.015 260);
+
+  /* — Default — */
+  --default: oklch(0.28 0.008 260);
+  --default-foreground: oklch(0.95 0 0);
+
+  /* — Status — */
+  --success: oklch(0.73 0.19 151);
+  --success-foreground: oklch(0.15 0 0);
+
+  --warning: oklch(0.82 0.14 76);
+  --warning-foreground: oklch(0.15 0 0);
+
+  --danger: oklch(0.59 0.20 25);
+  --danger-foreground: oklch(0.99 0 0);
+
+  /* — Misc — */
+  --border: oklch(0.28 0.006 260);
+  --separator: oklch(0.28 0.006 260);
+  --focus: var(--accent);
+  --link: var(--accent);
+}
