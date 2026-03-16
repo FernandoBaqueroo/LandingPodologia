@@ -120,7 +120,7 @@ export const CONTACT = {
   title: "Ubicación y Contacto",
   address: "Calle de Tucán, 7 Local, D-1, D-2, Carabanchel, 28025 Madrid",
   phone: "914 65 19 11",
-  email: "podologocarabanchel@gmail.com",
+  email: "info@podologiarubenbaquero.com",
   hours: "Lunes a Viernes · Cita previa",
   whatsappUrl: "https://wa.me/34657351637",
   mapsEmbedUrl:
