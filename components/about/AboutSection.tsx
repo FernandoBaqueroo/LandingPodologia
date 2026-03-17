@@ -59,6 +59,7 @@ const AboutSection = () => {
               alt="Rubén Baquero — Podólogo"
               fill
               priority
+              fetchPriority="high"
               quality={65}
               className="object-cover"
               sizes="(max-width: 640px) 90vw, (max-width: 768px) 100vw, 50vw"
