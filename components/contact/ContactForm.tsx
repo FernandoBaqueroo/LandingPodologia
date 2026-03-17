@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Button, Spinner } from "@heroui/react";
 import { Send } from "lucide-react";
 
@@ -26,6 +26,11 @@ const inputStyles =
 const ContactForm = () => {
   const [form, setForm] = useState<FormState>(initialState);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const loadTimestamp = useRef<number>(Date.now());
+
+  useEffect(() => {
+    loadTimestamp.current = Date.now();
+  }, []);
 
   const handleChange = (field: keyof FormState, value: string) => {
     setForm((prev) => ({ ...prev, [field]: value }));
@@ -52,6 +57,8 @@ const ContactForm = () => {
           email: form.email,
           phone: form.phone,
           message: form.message,
+          _honeypot: form.honeypot,
+          _timestamp: loadTimestamp.current,
         }),
       });
 
@@ -87,6 +94,7 @@ const ContactForm = () => {
           id="contact-name"
           type="text"
           required
+          maxLength={100}
           placeholder="Tu nombre"
           value={form.name}
           onChange={(e) => handleChange("name", e.target.value)}
@@ -102,6 +110,7 @@ const ContactForm = () => {
           id="contact-email"
           type="email"
           required
+          maxLength={254}
           placeholder="tu@email.com"
           value={form.email}
           onChange={(e) => handleChange("email", e.target.value)}
@@ -116,6 +125,7 @@ const ContactForm = () => {
         <input
           id="contact-phone"
           type="tel"
+          maxLength={20}
           placeholder="+34 600 000 000"
           value={form.phone}
           onChange={(e) => handleChange("phone", e.target.value)}
@@ -131,6 +141,7 @@ const ContactForm = () => {
           id="contact-message"
           required
           rows={4}
+          maxLength={2000}
           placeholder="Cuéntanos en qué podemos ayudarte..."
           value={form.message}
           onChange={(e) => handleChange("message", e.target.value)}

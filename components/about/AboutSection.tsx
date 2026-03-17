@@ -58,6 +58,7 @@ const AboutSection = () => {
               src={ABOUT.image}
               alt="Rubén Baquero — Podólogo"
               fill
+              priority
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 50vw"
             />

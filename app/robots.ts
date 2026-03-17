@@ -5,7 +5,7 @@ const robots = (): MetadataRoute.Robots => ({
     userAgent: "*",
     allow: "/",
   },
-  sitemap: "https://podologiarubenbaquero.com/sitemap.xml",
+  sitemap: "https://www.podologiarubenbaquero.com/sitemap.xml",
 });
 
 export default robots;

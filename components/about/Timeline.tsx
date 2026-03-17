@@ -86,9 +86,9 @@ const Timeline = () => {
                   <Calendar size={12} />
                   <Chip.Label>{item.year}</Chip.Label>
                 </Chip>
-                <h4 className="text-base lg:text-lg font-medium text-foreground mb-1">
+                <h3 className="text-base lg:text-lg font-medium text-foreground mb-1">
                   {item.title}
-                </h4>
+                </h3>
                 <span className="flex items-center gap-1.5 text-sm font-light text-muted">
                   <MapPin size={13} className="shrink-0 text-accent/60" />
                   {item.institution}

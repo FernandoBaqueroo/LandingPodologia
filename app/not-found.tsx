@@ -27,9 +27,9 @@ const NotFound = () => {
       className="min-h-screen flex flex-col items-center justify-center p-6 text-center bg-background overflow-hidden"
     >
       <div className="relative mb-8">
-        <div 
+        <div
           data-404-icon
-          className="w-24 h-24 lg:w-32 lg:h-32 rounded-3xl bg-accent/5 flex items-center justify-center border border-accent/20"
+          className="w-24 h-24 lg:w-32 lg:h-32 rounded-3xl bg-accent/5 flex items-center justify-center border border-accent-soft-hover"
         >
           <Compass size={48} className="text-accent lg:size-16" />
         </div>
@@ -38,18 +38,18 @@ const NotFound = () => {
         </div>
       </div>
 
-      <h1 
+      <h1
         data-404-title
         className="text-4xl lg:text-6xl font-semibold text-foreground mb-4 tracking-tight"
       >
         Página no encontrada
       </h1>
-      
-      <p 
+
+      <p
         data-404-text
         className="text-lg lg:text-xl font-light text-muted max-w-lg mb-10 leading-relaxed"
       >
-        Lo sentimos, la página que buscas no existe o ha sido movida. 
+        Lo sentimos, la página que buscas no existe o ha sido movida.
         Tus pies están en buenas manos, solo falta encontrar el camino correcto.
       </p>
 
