@@ -3,12 +3,15 @@
 import { useState, useEffect } from "react";
 import { Menu } from "lucide-react";
 import Image from "next/image";
+import { usePathname, useRouter } from "next/navigation";
 import { NAV_ITEMS } from "@/lib/data/constants";
 import MobileMenu from "@/components/layout/MobileMenu";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -61,10 +64,15 @@ const Header = () => {
                   onClick={(e) => {
                     e.preventDefault();
                     const targetId = item.href.replace("#", "");
-                    const element = document.getElementById(targetId);
-                    if (element) {
-                      element.scrollIntoView({ behavior: "smooth" });
-                      window.history.pushState(null, "", `/${targetId}`);
+                    
+                    if (pathname !== "/") {
+                      router.push(`/${item.href}`);
+                    } else {
+                      const element = document.getElementById(targetId);
+                      if (element) {
+                        element.scrollIntoView({ behavior: "smooth" });
+                        window.history.pushState(null, "", `/${targetId}`);
+                      }
                     }
                   }}
                   className="text-base font-medium text-foreground hover:text-accent transition-colors"

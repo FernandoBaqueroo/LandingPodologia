@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Button, Spinner } from "@heroui/react";
 import { Send } from "lucide-react";
+import Link from "next/link";
 
 interface FormState {
   name: string;
@@ -10,6 +11,7 @@ interface FormState {
   phone: string;
   message: string;
   honeypot: string;
+  acceptedPrivacy: boolean;
 }
 
 const initialState: FormState = {
@@ -18,6 +20,7 @@ const initialState: FormState = {
   phone: "",
   message: "",
   honeypot: "",
+  acceptedPrivacy: false,
 };
 
 const inputStyles =
@@ -32,12 +35,14 @@ const ContactForm = () => {
     loadTimestamp.current = Date.now();
   }, []);
 
-  const handleChange = (field: keyof FormState, value: string) => {
+  const handleChange = (field: keyof FormState, value: string | boolean) => {
     setForm((prev) => ({ ...prev, [field]: value }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!form.acceptedPrivacy) return;
 
     // Honeypot check — if filled, silently "succeed" without sending
     if (form.honeypot) {
@@ -59,6 +64,7 @@ const ContactForm = () => {
           message: form.message,
           _honeypot: form.honeypot,
           _timestamp: loadTimestamp.current,
+          _privacyAccepted: form.acceptedPrivacy,
         }),
       });
 
@@ -149,10 +155,35 @@ const ContactForm = () => {
         />
       </div>
 
+      <div className="flex flex-row items-center gap-3 mt-2">
+        <input
+          type="checkbox"
+          id="privacy-checkbox"
+          required
+          checked={form.acceptedPrivacy}
+          onChange={(e) => handleChange("acceptedPrivacy", e.target.checked)}
+          className="shrink-0 w-4 h-4 rounded border-border bg-background text-accent focus:ring-accent/30 cursor-pointer"
+        />
+        <label htmlFor="privacy-checkbox" className="text-xs font-light text-foreground/80 leading-snug cursor-pointer select-none">
+          He leído y acepto la{" "}
+          <Link 
+            href="/politica-privacidad" 
+            className="underline hover:text-foreground relative z-10" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
+          >
+            Política de Privacidad
+          </Link>
+          <span className="text-danger ml-0.5">*</span>
+        </label>
+      </div>
+
       <Button
         type="submit"
         size="lg"
         fullWidth
+        isDisabled={!form.acceptedPrivacy}
         isPending={isLoading}
         className="mt-1 font-normal"
       >
@@ -163,6 +194,18 @@ const ContactForm = () => {
           </>
         )}
       </Button>
+
+      <p className="text-[10px] text-foreground/50 leading-tight text-center mt-1">
+        Tus datos serán tratados por Rubén Baquero para gestionar tu solicitud. No se cederán a terceros salvo obligación legal. Puedes ejercer tus derechos de acceso, rectificación, supresión y oposición indicados en nuestra{" "}
+        <Link 
+          href="/politica-privacidad" 
+          className="underline hover:text-foreground relative z-10" 
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          Política de Privacidad
+        </Link>.
+      </p>
 
       {status === "success" && (
         <p className="text-sm text-success text-center">

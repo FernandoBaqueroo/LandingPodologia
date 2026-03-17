@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { NAV_ITEMS, CONTACT, FOOTER } from "@/lib/data/constants";
+import { NAV_ITEMS, CONTACT, FOOTER, LEGAL_LINKS } from "@/lib/data/constants";
 import { MapPin, Phone, Mail, Linkedin } from "lucide-react";
 
 const Footer = () => {
@@ -103,9 +103,20 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Divider + Copyright */}
-        <div className="mt-12 pt-8 border-t border-background/20 text-center">
+        {/* Divider + Copyright & Legal */}
+        <div className="mt-12 pt-8 border-t border-background/20 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
           <p className="text-sm font-light opacity-50">{FOOTER.copyright}</p>
+          <div className="flex gap-4 items-center">
+            {LEGAL_LINKS.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-xs font-light opacity-50 hover:opacity-100 transition-opacity"
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </footer>

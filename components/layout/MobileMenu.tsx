@@ -2,6 +2,7 @@
 
 import { Button } from "@heroui/react";
 import { X, Phone } from "lucide-react";
+import { usePathname, useRouter } from "next/navigation";
 import { NAV_ITEMS } from "@/lib/data/constants";
 
 interface MobileMenuProps {
@@ -10,6 +11,9 @@ interface MobileMenuProps {
 }
 
 const MobileMenu = ({ open, onClose }: MobileMenuProps) => {
+  const pathname = usePathname();
+  const router = useRouter();
+
   return (
     <>
       {/* Backdrop */}
@@ -56,10 +60,15 @@ const MobileMenu = ({ open, onClose }: MobileMenuProps) => {
                 e.preventDefault();
                 onClose();
                 const targetId = item.href.replace("#", "");
-                const element = document.getElementById(targetId);
-                if (element) {
-                  element.scrollIntoView({ behavior: "smooth" });
-                  window.history.pushState(null, "", `/${targetId}`);
+                
+                if (pathname !== "/") {
+                  router.push(`/${item.href}`);
+                } else {
+                  const element = document.getElementById(targetId);
+                  if (element) {
+                    element.scrollIntoView({ behavior: "smooth" });
+                    window.history.pushState(null, "", `/${targetId}`);
+                  }
                 }
               }}
               className="px-4 py-3 rounded-lg text-base font-medium text-foreground hover:bg-default transition-colors"
