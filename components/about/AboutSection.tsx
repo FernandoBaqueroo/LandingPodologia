@@ -59,8 +59,9 @@ const AboutSection = () => {
               alt="Rubén Baquero — Podólogo"
               fill
               priority
+              quality={65}
               className="object-cover"
-              sizes="(max-width: 768px) 100vw, 50vw"
+              sizes="(max-width: 640px) 90vw, (max-width: 768px) 100vw, 50vw"
             />
           </div>
           <div data-about-timeline className="h-full">
