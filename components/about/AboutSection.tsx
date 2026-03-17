@@ -52,16 +52,17 @@ const AboutSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-20 items-stretch mb-12 lg:mb-24">
           <div
             data-about-photo
-            className="relative rounded-2xl overflow-hidden shadow-overlay aspect-3/4 md:aspect-auto md:min-h-96 lg:min-h-128 2xl:min-h-160"
+            className="rounded-2xl overflow-hidden shadow-overlay aspect-3/4 md:aspect-auto md:min-h-96 lg:min-h-128 2xl:min-h-160"
           >
             <Image
               src={ABOUT.image}
               alt="Rubén Baquero — Podólogo"
-              fill
+              width={750}
+              height={998}
               priority
               fetchPriority="high"
               quality={65}
-              className="object-cover"
+              className="w-full h-full object-cover"
               sizes="(max-width: 640px) 90vw, (max-width: 768px) 100vw, 50vw"
             />
           </div>
