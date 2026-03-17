@@ -13,8 +13,17 @@ interface ContactBody {
 
 export const POST = async (request: Request) => {
   try {
+    const apiKey = process.env.RESEND_API_KEY;
+
+    if (!apiKey) {
+      return NextResponse.json(
+        { error: "RESEND_API_KEY no está configurada en el servidor." },
+        { status: 500 }
+      );
+    }
+
     const body = (await request.json()) as ContactBody;
-    const resend = new Resend(process.env.RESEND_API_KEY);
+    const resend = new Resend(apiKey);
 
     if (!body.name || !body.email || !body.message) {
       return NextResponse.json(
@@ -23,7 +32,7 @@ export const POST = async (request: Request) => {
       );
     }
 
-    const { error } = await resend.emails.send({
+    const { data, error } = await resend.emails.send({
       from: `Formulario Web <info@podologiarubenbaquero.com>`,
       to: ["podologocarabanchel@gmail.com"],
       replyTo: body.email,
@@ -62,21 +71,22 @@ export const POST = async (request: Request) => {
     });
 
     if (error) {
-      console.error("❌ Error de Resend:", error);
+      console.error("❌ Error de Resend:", JSON.stringify(error));
       return NextResponse.json(
-        { error: `Error de Resend: ${error.message || "Error desconocido"}`, detail: error },
+        { error: error.message || "Error desconocido de Resend", name: error.name, detail: error },
         { status: 500 }
       );
     }
 
     return NextResponse.json(
-      { success: true, message: "Mensaje enviado correctamente." },
+      { success: true, message: "Mensaje enviado correctamente.", id: data?.id },
       { status: 200 }
     );
-  } catch (err) {
-    console.error("❌ Error en /api/contact:", err);
+  } catch (err: unknown) {
+    const message = err instanceof Error ? err.message : "Error desconocido";
+    console.error("❌ Error en /api/contact:", message);
     return NextResponse.json(
-      { error: "Error al procesar la solicitud." },
+      { error: message },
       { status: 500 }
     );
   }
