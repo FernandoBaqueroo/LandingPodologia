@@ -32,7 +32,7 @@ export default function PoliticaPrivacidadPage() {
           <h2 className="text-xl md:text-2xl font-medium text-foreground">1. Responsable del tratamiento de tus datos personales</h2>
           <ul className="list-disc pl-5 flex flex-col gap-2">
             <li><strong className="font-semibold text-foreground">Identidad del Responsable:</strong> Ruben Baquero Zamora</li>
-            <li><strong className="font-semibold text-foreground">NIF:</strong> </li>
+            <li><strong className="font-semibold text-foreground">NIF:</strong> 80227903Q</li>
             <li><strong className="font-semibold text-foreground">Dirección:</strong> Calle Tucán 7. Locales D-1, D-2, Carabanchel, Madrid 28025</li>
             <li><strong className="font-semibold text-foreground">Correo electrónico:</strong> podologocarabanchel@gmail.com</li>
           </ul>

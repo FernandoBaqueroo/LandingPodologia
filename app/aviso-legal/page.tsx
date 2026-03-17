@@ -34,9 +34,9 @@ export default function AvisoLegalPage() {
           <h2 className="text-xl md:text-2xl font-medium text-foreground">1. Datos identificativos</h2>
           <ul className="list-disc pl-5 flex flex-col gap-2">
             <li><strong className="font-semibold text-foreground">Denominación / Titular:</strong> Ruben Baquero Zamora</li>
-            <li><strong className="font-semibold text-foreground">NIF:</strong> </li>
+            <li><strong className="font-semibold text-foreground">NIF:</strong> 80227903Q</li>
             <li><strong className="font-semibold text-foreground">Domicilio:</strong> Calle Tucán 7. Locales D-1, D-2, Carabanchel, Madrid 28025</li>
-            <li><strong className="font-semibold text-foreground">Colegio Profesional:</strong> </li>
+            <li><strong className="font-semibold text-foreground">Colegio Profesional:</strong> COPOMA (Colegio Oficial de Podólogos de Madrid)</li>
             <li><strong className="font-semibold text-foreground">Número de Colegiado:</strong> 838282854</li>
             <li><strong className="font-semibold text-foreground">Email de contacto:</strong> podologocarabanchel@gmail.com</li>
             <li><strong className="font-semibold text-foreground">Teléfono de contacto:</strong> 914 65 19 11</li>
