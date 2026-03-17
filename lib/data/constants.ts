@@ -25,7 +25,7 @@ export const HERO = {
 /* ─── About ─── */
 export const ABOUT = {
   title: "Sobre Mí",
-  bio: "Hola, soy Rubén Baquero, podólogo con más de 9 años de experiencia. A lo largo de mi carrera he trabajado en diversas clínicas de Madrid, colaborando con grandes profesionales que me han permitido especializarme en ecografía del pie y tobillo, biomecánica, pie diabético y cirugía podológica.\n\nLa pasión por mi profesión me motivó a realizar un Experto Universitario en Pie Diabético en 2016 y un máster en Cirugía Mínimamente Invasiva en 2018.\n\nAdemás, completé una residencia en Cirugía del Pie y Tobillo en Barcelona en 2020 y he participado en programas de formación continuada, tanto a nivel nacional como en Estados Unidos, lo que me ha permitido seguir perfeccionando mis habilidades.\n\nMi objetivo es ofrecerte un cuidado cercano y de calidad, utilizando los últimos avances en podología para que tus pies estén siempre en las mejores manos. ¡Ven a conocernos!",
+  bio: "Hola, soy Rubén Baquero, podólogo con {{years}} años de experiencia. A lo largo de mi carrera he trabajado en diversas clínicas de Madrid, colaborando con grandes profesionales que me han permitido especializarme en ecografía del pie y tobillo, biomecánica, pie diabético y cirugía podológica.\n\nLa pasión por mi profesión me motivó a realizar un Experto Universitario en Pie Diabético en 2016 y un máster en Cirugía Mínimamente Invasiva en 2018, además de completar una residencia en Cirugía del Pie y Tobillo en Barcelona en 2020. También he participado en programas de formación continuada, tanto a nivel nacional como en Estados Unidos, lo que me ha permitido seguir perfeccionando mis habilidades.\n\nMi objetivo es ofrecerte un cuidado cercano y de calidad, utilizando los últimos avances en podología para que tus pies estén siempre en las mejores manos. ¡Ven a conocernos!",
   image: "/photos/about_me.webp",
 };
 
@@ -48,18 +48,13 @@ export const TIMELINE: TimelineItem[] = [
   },
   {
     year: "2017–2018",
-    institution: "Universidad Católica de Valencia",
-    title: "Máster en Cirugía Podológica",
+    institution: "Universidad Católica de Valencia San Vicente Mártir",
+    title: "Master en Cirugía Minimamente Invasiva del Pie",
   },
   {
-    year: "2019–2022",
-    institution: "The Podiatry Institute Inc. (Atlanta)",
-    title: "Surgical Skills Training Program",
-  },
-  {
-    year: "2020",
-    institution: "Residencia en Barcelona",
-    title: "Cirugía del pie y tobillo",
+    year: "2022",
+    institution: "The Podiatry Institute Inc.",
+    title: "Foot & Ankle Surgical Skills Training Program in Atlanta",
   },
 ];
 
@@ -120,8 +115,9 @@ export const CONTACT = {
   title: "Ubicación y Contacto",
   address: "Calle de Tucán, 7 Local, D-1, D-2, Carabanchel, 28025 Madrid",
   phone: "914 65 19 11",
-  email: "podologocarabanchel@gmail.com",
-  hours: "Lunes a Viernes · Cita previa",
+  email: "info@podologiarubenbaquero.com",
+  hours: "Ver horario (Pulsar aquí)",
+  detailedHours: "Lunes, martes y viernes de 9:30 - 14:00 y de 16:00 a 19:00",
   whatsappUrl: "https://wa.me/34657351637",
   mapsEmbedUrl:
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3038.8446068072626!2d-3.7389467999999995!3d40.390136500000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4227e2791e2b11%3A0xc44c9508e6c86e40!2sPodolog%C3%ADa%20y%20Biomec%C3%A1nica%20Rub%C3%A9n%20Baquero%20%7C%20Policl%C3%ADnica%20Alondra!5e0!3m2!1ses!2ses!4v1730374745972!5m2!1ses!2ses",

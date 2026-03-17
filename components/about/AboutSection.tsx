@@ -10,6 +10,7 @@ import { ArrowRight, Quote } from "lucide-react";
 import { ABOUT } from "@/lib/data/constants";
 import Timeline from "@/components/about/Timeline";
 import ExpandableQuote from "@/components/about/ExpandableQuote";
+import { getYearsOfExperience } from "@/lib/utils/dates";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -37,6 +38,9 @@ const AboutSection = () => {
     { scope: containerRef }
   );
 
+  const experienceYears = getYearsOfExperience(2016);
+  const dynamicBio = ABOUT.bio.replace("{{years}}", experienceYears.toString());
+
   return (
     <section ref={containerRef} id="sobre-mi" className="py-20 lg:py-32 bg-background overflow-hidden">
       <div className="max-w-screen-2xl w-full mx-auto px-6 lg:px-10">
@@ -45,7 +49,7 @@ const AboutSection = () => {
         </h2>
 
         {/* Photo + Timeline — side-by-side desde md (768px) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-20 items-start mb-12 lg:mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-20 items-stretch mb-12 lg:mb-24">
           <div
             data-about-photo
             className="relative rounded-2xl overflow-hidden shadow-overlay aspect-3/4 md:aspect-auto md:min-h-96 lg:min-h-128 2xl:min-h-160"
@@ -58,7 +62,7 @@ const AboutSection = () => {
               sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>
-          <div data-about-timeline className="py-2">
+          <div data-about-timeline className="h-full">
             <Timeline />
           </div>
         </div>
@@ -66,13 +70,12 @@ const AboutSection = () => {
         <Separator className="mb-12 lg:mb-20" />
 
         {/* Bio as clean quote */}
-        <div data-about-quote className="max-w-4xl mx-auto relative">
+        <div data-about-quote className="max-w-4xl mx-auto relative px-2 lg:px-0">
           <Quote
-            size={48}
-            className="text-accent-soft absolute -top-4 -left-1 lg:-left-6"
+            className="text-accent-soft absolute -top-2 lg:-top-4 left-0 lg:-left-6 w-8 h-8 lg:w-12 lg:h-12"
           />
-          <div className="pl-6 lg:pl-10">
-            <ExpandableQuote text={ABOUT.bio} author="Rubén Baquero, Podólogo" />
+          <div className="pl-10 lg:pl-12">
+            <ExpandableQuote text={dynamicBio} author="Rubén Baquero, Podólogo" />
           </div>
           <div className="mt-8 lg:mt-10 flex justify-center">
             <a href="#ubicacion" className="group">

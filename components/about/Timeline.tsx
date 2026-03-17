@@ -60,15 +60,15 @@ const Timeline = () => {
   );
 
   return (
-    <div ref={containerRef} className="h-full flex flex-col justify-between">
-      <div className="relative">
+    <div ref={containerRef} className="h-full py-4">
+      <div className="relative h-full flex flex-col">
         {/* Vertical line */}
         <div
           data-timeline-line
           className="absolute left-6 lg:left-8 top-0 bottom-0 w-0.5 bg-accent/30 rounded-full"
         />
 
-        <div className="flex flex-col gap-4 lg:gap-5">
+        <div className="h-full flex flex-col justify-between">
           {TIMELINE.map((item, index) => (
             <div
               key={index}
