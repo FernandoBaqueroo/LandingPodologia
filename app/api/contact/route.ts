@@ -24,7 +24,7 @@ export const POST = async (request: Request) => {
     }
 
     const { error } = await resend.emails.send({
-      from: `Formulario Web <notificaciones@podologiarrubenbaquero.com>`,
+      from: `Formulario Web <info@podologiarubenbaquero.com>`,
       to: ["podologocarabanchel@gmail.com"],
       replyTo: body.email,
       subject: `Nuevo mensaje de contacto — ${body.name}`,
