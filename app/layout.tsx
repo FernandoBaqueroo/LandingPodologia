@@ -21,8 +21,8 @@ export const metadata: Metadata = {
   description:
     "Clínica de podología en Carabanchel, Madrid. Especialistas en biomecánica, ecografía del pie, plantillas a medida y cirugía podológica. Más de 9 años de experiencia.",
   icons: {
-    icon: "/photos/favicon-round.png",
-    apple: "/photos/favicon-round.png",
+    icon: "/photos/favicon-round.webp",
+    apple: "/photos/favicon-round.webp",
   },
   openGraph: {
     title: "Podólogo en Carabanchel | Rubén Baquero",
