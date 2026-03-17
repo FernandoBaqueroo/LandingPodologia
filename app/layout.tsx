@@ -4,6 +4,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import GsapProvider from "@/components/providers/GsapProvider";
+import ScrollHandler from "@/components/layout/ScrollHandler";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
@@ -39,6 +40,7 @@ const RootLayout = ({
     <html lang="es" className="light scroll-smooth" data-theme="light">
       <body className={`${poppins.className} bg-background text-foreground`}>
         <GsapProvider>
+          <ScrollHandler />
           <Header />
           {children}
           <Footer />

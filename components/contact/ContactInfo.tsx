@@ -1,8 +1,14 @@
+"use client";
+
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { Card } from "@heroui/react";
 import { CONTACT } from "@/lib/data/constants";
+import { useState } from "react";
+import { ScheduleModal } from "./ScheduleModal";
 
 const ContactInfo = () => {
+  const [isScheduleOpen, setIsScheduleOpen] = useState(false);
+
   return (
     <div className="flex flex-col gap-8">
       <Card>
@@ -40,16 +46,23 @@ const ContactInfo = () => {
             </span>
           </a>
 
-          <div className="flex items-center gap-4">
-            <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-accent/10 shrink-0">
+          <button
+            onClick={() => setIsScheduleOpen(true)}
+            className="flex items-center gap-4 group text-left w-full cursor-pointer transition-colors"
+          >
+            <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-accent/10 shrink-0 group-hover:bg-accent-soft-hover transition-colors">
               <Clock size={20} className="text-accent" />
             </div>
-            <span className="text-base font-light text-foreground">
-              {CONTACT.hours}
-            </span>
-          </div>
+            <div className="flex flex-col">
+              <span className="text-base font-medium text-accent hover:opacity-80 transition-opacity underline underline-offset-4 decoration-accent/60">
+                {CONTACT.hours}
+              </span>
+            </div>
+          </button>
         </Card.Content>
       </Card>
+
+      <ScheduleModal isOpen={isScheduleOpen} onOpenChange={setIsScheduleOpen} />
 
       {/* Google Maps iframe */}
       <div className="rounded-2xl overflow-hidden shadow-overlay aspect-4/3">
